@@ -47,7 +47,7 @@ function moveEnemy() {
     let hitter = false;
     let tempShots = document.querySelectorAll('.fireme');
     for (let enemy of tempEnemy) {
-        if (enemy.offsetTop > 550 || enemy.offsetTop < 0 || enemy.offsetLeft > 750 || enemy.offsetLeft < 0) {
+        if (enemy.offsetTop > 550 || enemy.offsetTop < 0 || enemy.offsetLeft > 1200 || enemy.offsetLeft < 0) {
             enemy.parentNode.removeChild(enemy);
             badmaker();
         }
@@ -126,12 +126,13 @@ function mouseDown(e) {
         let div = document.createElement('div');
         let deg = getDeg(e);
         div.setAttribute('class', 'fireme');
+    
+
         div.moverx = 5 * Math.sin(degRad(deg));
         div.movery = -5 * Math.cos(degRad(deg));
         div.style.left = (boxCenter[0] - 5) + 'px';
         div.style.top = (boxCenter[1] - 5) + 'px';
-        div.style.width = 10 + 'px';
-        div.style.height = 10 + 'px';
+       
         container.appendChild(div);
     }
 }
